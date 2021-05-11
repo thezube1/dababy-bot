@@ -4,4 +4,5 @@ A discord bot based off rapper DaBaby. Typing various commands will prompt DaBab
 
 # Commands:
 | Command | Description|
+| -------- | ---------- |
 | !lets go | Plays 'lets go' |
