@@ -1,0 +1,13 @@
+{
+  "name": "DaBabyBot",
+  "version": "1.0.0",
+  "description": "DaBaby bot for DaTopia",
+  "main": "index.js",
+  "author": "Zubin Hydrie",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "discord.js": "^12.5.3",
+    "nodemon": "^2.0.7"
+  }
+}
