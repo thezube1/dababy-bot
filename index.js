@@ -34,6 +34,12 @@ client.on("message", (message) => {
     playClip(message, "./audio/its-baby-clip.webm");
     message.reply("YOU KNOW ITS BABY NEIGHBOR!");
   }
+  if (message.content === "!reset") {
+    var voiceChannel = message.member.voice.channel;
+    if (voiceChannel) {
+      voiceChannel.leave();
+    }
+  }
 });
 
 client.login(process.env.BOT_TOKEN);
