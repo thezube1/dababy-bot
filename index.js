@@ -19,7 +19,6 @@ for (const folder of commandFolders) {
 
 client.on("message", (message) => {
   if (message.author.bot) return;
-
   if (message.content.substring(0, 1) === "!") {
     try {
       client.commands.get(message.content).execute(message);

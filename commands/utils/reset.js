@@ -1,5 +1,3 @@
-const playClip = require("../../modules/audio-clip");
-
 module.exports = {
   name: "!reset",
   description: "reset",
