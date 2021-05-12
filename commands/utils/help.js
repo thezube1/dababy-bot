@@ -15,7 +15,7 @@ module.exports = {
         "https://i.imgur.com/bb7gfb4.jpg",
         "https://discord.js.org"
       )
-      .setImage("https://imgur.com/a/BGf234t");
+      .setImage("https://i.imgur.com/uvERCFK.png");
 
     message.reply(embedHelp);
   },
