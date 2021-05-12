@@ -22,5 +22,5 @@ This was created as a joke for a discord server with my friends, however I plan 
 # Changelog
 
 -5/11/21:
-Added ability to play sounds and added 5 new commands. Also updated to use .env files for security. Added reset command
+Added ability to play sounds and added 5 new commands. Also updated to use .env files for security. Added reset command <br />
 -5/12/21: Refactored code to seperate files and added help command
