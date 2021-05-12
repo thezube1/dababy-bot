@@ -13,6 +13,7 @@ A discord bot based off rapper DaBaby. Typing various commands will prompt DaBab
 | !convertible | Plays DaBaby saying converitble line |
 | !pull up | Plays DaBaby saying 'I pull up!' |
 | !its baby | Plays DaBaby introducing himself |
+| !dahelp | Shows help embed with github link and commands |
 
 
 
@@ -22,3 +23,4 @@ This was created as a joke for a discord server with my friends, however I plan 
 
 -5/11/21:
 Added ability to play sounds and added 5 new commands. Also updated to use .env files for security. Added reset command
+-5/12/21: Refactored code to seperate files and added help command
