@@ -1,44 +1,29 @@
+const fs = require("fs");
 const Discord = require("discord.js");
-const playClip = require("./audio-clip");
 require("dotenv").config();
 
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
+
+const commandFolders = fs.readdirSync("./commands");
+
+for (const folder of commandFolders) {
+  const commandFiles = fs
+    .readdirSync(`./commands/${folder}`)
+    .filter((file) => file.endsWith(".js"));
+  for (const file of commandFiles) {
+    const command = require(`./commands/${folder}/${file}`);
+    client.commands.set(command.name, command);
+  }
+}
 
 client.on("message", (message) => {
   if (message.author.bot) return;
-  if (message.content === "!lets go") {
-    playClip(message, "./audio/dababy-clip.webm");
-    message.reply("LETS GO!");
-  }
-  if (message.content === "!huh") {
-    playClip(message, "./audio/huh-clip.webm");
-    message.reply("HUH?!");
-  }
-  if (message.content === "!yeah yeah") {
-    playClip(message, "./audio/yeah-clip.webm");
-    message.reply("YEAH YEAH!");
-  }
-  if (message.content === "!jetson") {
-    playClip(message, "./audio/jetson-clip.webm");
-    message.reply("Oh lord, Jetson made another one");
-  }
-  if (message.content === "!convertible") {
-    playClip(message, "./audio/convertible-clip.webm");
-    message.reply("I will turn a NEIGHBOR into a convertible!");
-  }
-  if (message.content === "!pull up") {
-    playClip(message, "./audio/pullup-clip.webm");
-    message.reply("I PULL UP!");
-  }
-  if (message.content === "!its baby") {
-    playClip(message, "./audio/its-baby-clip.webm");
-    message.reply("YOU KNOW ITS BABY NEIGHBOR!");
-  }
-  if (message.content === "!reset") {
-    var voiceChannel = message.member.voice.channel;
-    if (voiceChannel) {
-      voiceChannel.leave();
-    }
+
+  try {
+    client.commands.get(message.content).execute(message);
+  } catch (error) {
+    message.reply("Not a valid command!");
   }
 });
 
